@@ -1,7 +1,6 @@
----
-swagger: "3.0"
+openapi: 3.0.0
 info:
-  title: OpenAPI definition
+  title: OpenAPI definition oh shit were go again
   version: v0
 servers:
   - url: http://127.0.0.1:8080
@@ -9,8 +8,6 @@ servers:
 paths:
   "/pet":
     post:
-      tags:
-        - main-controller
       summary: Add pet to db
       operationId: savePet
       requestBody:
@@ -26,17 +23,16 @@ paths:
             application/json;:
               schema:
                 "$ref": "#/components/schemas/Pet"
-        '406':
-          description: Pet already exists
+        "300":
+          description: "its 300"
           content:
             "*/*":
               schema:
                 "$ref": "#/components/schemas/Pet"
+
   "/petName":
     post:
-      tags:
-        - main-controller
-      operationId: savePet_1
+      operationId: savePetMap
       requestBody:
         content:
           application/json:
@@ -47,15 +43,19 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: NICE
+          content:
+            application/json:
+              schema:
+                type: object
+        '300':
+          description: NO nice 300
           content:
             application/json:
               schema:
                 type: object
   "/{name}":
     get:
-      tags:
-        - main-controller
       summary: Add string to db
       operationId: hello
       parameters:
@@ -80,12 +80,16 @@ paths:
                 type: string
   "/":
     get:
-      tags:
-        - main-controller
       operationId: main
       responses:
         '200':
           description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+        "300":
+          description: "its 300"
           content:
             "*/*":
               schema:
