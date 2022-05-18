@@ -81,6 +81,25 @@
             <version>4.0.0-M4</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-annotations -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.6.6</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -100,7 +119,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>swagger.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/src/main/resources/swagger.yaml</inputSpec>
                             <language>java</language>
                             <library>resttemplate</library>
                         </configuration>
